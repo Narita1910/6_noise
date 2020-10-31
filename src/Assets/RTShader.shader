@@ -41,9 +41,9 @@
             float4 frag(v2f_customrendertexture IN) : COLOR
             {
                 float noise = 
-                      Noise(IN.globalTexcoord*10+_Time.y)+
+                      Noise(IN.globalTexcoord*10+_Time.x)+
                        Noise(IN.globalTexcoord*20+_Time.y*2)*0.5+
-                        Noise(IN.globalTexcoord*40+_Time.y*4)*0.25+
+                        Noise(IN.globalTexcoord*40+_Time.x*4)*0.25+
                          Noise(IN.globalTexcoord*80+_Time.y*8)*0.125;
                         noise/= 1.0+0.5+0.25+0.125;
                         noise=noise*0.5*0.5;
